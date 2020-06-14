@@ -3,6 +3,7 @@
         <div class="postes" >
             <div class="postBody" v-for="(posta, index) in postdata" :key="index" >
                 <button @click="removeiteam(index)" class="btn btn-danger">X</button>
+                <button @click="edititeam(posta)" class="btn btn-info" >❤</button>
                 <h3>{{posta.userName}}</h3>
                 <p>{{posta.bodyPost}}</p>
             </div>
@@ -17,12 +18,15 @@ export default {
     methods:{
         removeiteam(index){
             this.postdata.splice(index,1)
+        },
+        edititeam(post){
+            this.$emit('edititeam',post)
         }
     }
 }
 </script>
 
-<style>
+<style scoped>
     .postes button{
         font-size: 8px;
         font-weight: 900;
