@@ -135,7 +135,10 @@ export default {
         font-size: 13px;
         margin: 5px 0px;
     }
-    .content form p{}
+    .content form p{
+        color: #fff;
+        font-size: 15px;
+    }
     .content form button{
         padding: 10px 30px;
         border-radius: 5px;
