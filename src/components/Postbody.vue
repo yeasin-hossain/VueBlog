@@ -7,7 +7,7 @@
                 <h3>{{posta.userName}}</h3>
                 <p>{{posta.bodyPost}}</p>
             </div>
-        </div> 
+        </div>
   </div>
 </template>
 
@@ -20,7 +20,8 @@ export default {
             this.postdata.splice(index,1)
         },
         edititeam(post){
-            this.$emit('edititeam',post)
+           // this.$emit('edititeam',post)
+            this.$store.commit('addFev', post)
         }
     }
 }
