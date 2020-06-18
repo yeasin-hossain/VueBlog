@@ -40,7 +40,7 @@
 
             </div>
 
-            <Postbody v-bind:postdata="post" v-on:edititeam="editdata($event)" />
+            <Postbody v-on:edititeam="editdata($event)" />
             <Fevorite/>
         </div>
     </div>
@@ -60,11 +60,6 @@ export default {
     },
     data(){
         return {
-            post:[{
-                id:1,
-                userName:'This Is Dummy Post Title',
-                bodyPost:' Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit deleniti, nihil alias exercitationem maiores cum optio nisi porro asperiores magni ipsa, iste quas iusto dignissimos ex fugiat debitis aperiam harum. '
-            }],
             msg:null,
             updatetext: false,
             updatecon:{
@@ -83,10 +78,12 @@ export default {
         dataSend(){
             if(this.newitem.userName && this.newitem.bodyPost){
 
-                this.post.push({        
-                    userName:this.newitem.userName,
-                    bodyPost:this.newitem.bodyPost
-                }),
+                // this.post.push({        
+                //     userName:this.newitem.userName,
+                //     bodyPost:this.newitem.bodyPost
+                // }),
+                this.$store.commit('addNewPost',this.newitem)
+
                 this.newitem.userName='',
                 this.newitem.bodyPost=''
             }else{

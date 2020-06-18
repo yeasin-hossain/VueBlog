@@ -1,9 +1,9 @@
 <template>
   <div class="col-md-5">
         <div class="postes" >
-            <div class="postBody" v-for="(posta, index) in postdata" :key="index" >
+            <div class="postBody" v-for="(posta, index) in getAllPost" :key="index" >
                 <button @click="removeiteam(index)" class="btn btn-danger">X</button>
-                <button @click="edititeam(posta)" class="btn btn-info" >❤</button>
+                <button @click="edititeam(posta)" v-if="fevButton" class="btn btn-dark" >❤</button>
                 <h3>{{posta.userName}}</h3>
                 <p>{{posta.bodyPost}}</p>
             </div>
@@ -14,16 +14,30 @@
 <script>
 export default {
     name:'Postbody',
-    props:['postdata'],
+    data(){
+        return{
+            fevButton:true,
+            allpost:''
+        }
+    },
+    computed:{
+        getAllPost(){
+            return this.$store.getters.getAllPost
+        }
+    },
     methods:{
         removeiteam(index){
-            this.postdata.splice(index,1)
+           // this.allpost.splice(index,1)
+            this.$store.commit('removePost',index)
         },
         edititeam(post){
            // this.$emit('edititeam',post)
             this.$store.commit('addFev', post)
-        }
-    }
+            //this.fevButton = false
+        },
+        
+    },
+
 }
 </script>
 
@@ -32,6 +46,7 @@ export default {
         font-size: 8px;
         font-weight: 900;
         float: right;
+        margin: 2px;
     }
     .postBody{
         min-height: 150px;
@@ -48,7 +63,7 @@ export default {
     }
     .postBody p{
         letter-spacing: 1px;
-        text-align: left;
+        text-align: center;
         padding: 10px;
         color: #fff;
         font-size: 13px;
