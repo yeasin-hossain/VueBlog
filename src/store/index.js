@@ -9,6 +9,7 @@ export const storage = {
         ],
         FevPost: [
             {
+                id:1,
                 userName:'This Is Dummy fevorite Post'
             }
         ]

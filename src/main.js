@@ -6,13 +6,14 @@ import Vuex from 'vuex'
 import Home from './components/Home'
 import About from './components/about'
 import Shanto from './components/shanto'
-
+import Post from './components/post'
 // vour router
 Vue.use(VueRouter);
 const routes=[
   {path:'/',component:Home},
   {path:'/about',component:About},
-  {path:'/shanto',component:Shanto}
+  {path:'/shanto',component:Shanto},
+  {path:'/post/:id',component:Post}
 
 ]
 

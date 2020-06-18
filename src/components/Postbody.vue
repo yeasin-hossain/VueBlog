@@ -6,6 +6,9 @@
                 <button @click="edititeam(posta)" v-if="fevButton" class="btn btn-dark" >❤</button>
                 <h3>{{posta.userName}}</h3>
                 <p>{{posta.bodyPost}}</p>
+                <router-link :to="{path: '/post/'+posta.id}">
+                <p>See more...</p>
+                </router-link>
             </div>
         </div>
   </div>
@@ -67,5 +70,14 @@ export default {
         padding: 10px;
         color: #fff;
         font-size: 13px;
+    }
+    .postBody a{
+        text-decoration: none;
+    }
+    .postBody a>p{
+        margin: 0;
+        font-weight: 700;
+        color: #000;
+        letter-spacing: 2px;
     }
 </style>

@@ -3,10 +3,10 @@
     <div class="col-md-3">
         <div class="fevorite" >
             <div class="post" v-for="(iteam, index) in iteams" :key="index">
-            <p>{{iteam.userName}}
-            <button @click="removeiteam(index)" class="btn btn-danger">X</button>
-
-            </p>
+                <router-link :to="{path: '/post/'+iteam.id}">
+                    <p>{{iteam.userName}}</p>
+                </router-link>
+                    <button @click="removeiteam(index)" class="btn btn-danger">X</button>
             </div>
         </div>
     </div>
@@ -34,15 +34,27 @@ export default {
 .fevorite{
     margin-top: 15px;
 }
-.post p{
+.post{
+    display: flex;
+    min-height: 45px;
     background: darkcyan;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    height: auto;
+    margin-top: 5px;
+}
+.post a{
+    text-decoration: none;
+}
+.post p{
     color: #fff;
     padding: 5px;
     font-weight: 600;
     font-size: 15px;
-    border-radius: 3px;
+    margin: 0;
 }
-.post p>button{
+.post button{
     font-size: 10px;
     font-weight: 900;
 }
