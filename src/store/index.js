@@ -8,7 +8,8 @@ export const storage = {
         FevPost: [{
             id: 1,
             userName: 'This Is Dummy fevorite Post'
-        }]
+        }],
+        singlePost:[]
     },
     getters: {
         getAllPost(state) {
@@ -16,8 +17,10 @@ export const storage = {
         },
         getFevPost(state) {
             return state.FevPost
-        }
-
+        },
+        getSinglePost(state){
+            return state.singlePost
+        },
     },
     mutations: {
         addNewPost(state, payload) {
@@ -37,5 +40,9 @@ export const storage = {
         removePost(state, payload) {
             state.AllPost.splice(payload, 1)
         },
+        AddSinglePost(state,payload){
+            state.singlePost.splice(0, 1);
+            state.singlePost.push(payload)
+        }
     }
 }

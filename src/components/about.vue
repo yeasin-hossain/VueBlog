@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1>THis is from About{{name}} {{year}}</h1>
+      <h1>THis is from About{{name}}</h1>
   </div>
 </template>
 
@@ -10,7 +10,6 @@ export default {
     data (){
         return{
             name: 'Shanto ',
-            year: 21,
         }
     }
 }

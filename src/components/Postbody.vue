@@ -7,7 +7,7 @@
                 <h3>{{posta.userName}}</h3>
                 <p>{{posta.bodyPost}}</p>
                 <router-link :to="{path: '/post/'+posta.id}">
-                <p>See more...</p>
+                <p @click="singlePost(posta)">See more...</p>
                 </router-link>
             </div>
         </div>
@@ -38,7 +38,9 @@ export default {
             this.$store.commit('addFev', post)
             //this.fevButton = false
         },
-        
+        singlePost(post){
+            this.$store.commit('AddSinglePost',post)
+        }
     },
 
 }

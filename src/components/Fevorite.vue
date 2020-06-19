@@ -1,17 +1,14 @@
 <template>
-
     <div class="col-md-3">
-        <div class="fevorite" >
+        <div class="fevorite">
             <div class="post" v-for="(iteam, index) in iteams" :key="index">
                 <router-link :to="{path: '/post/'+iteam.id}">
-                    <p>{{iteam.userName}}</p>
+                    <p @click="singlePost(iteam)">{{iteam.userName}}</p>
                 </router-link>
                     <button @click="removeiteam(index)" class="btn btn-danger">X</button>
             </div>
         </div>
     </div>
-    
-
 </template>
 
 <script>
@@ -25,6 +22,9 @@ export default {
     methods:{
         removeiteam(index){
             this.$store.commit('removeFev',index)
+        },
+        singlePost(post){
+            this.$store.commit('AddSinglePost',post)
         }
     }
 }
