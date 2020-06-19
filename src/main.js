@@ -9,22 +9,35 @@ import Shanto from './components/shanto'
 import Post from './components/post'
 // vour router
 Vue.use(VueRouter);
-const routes=[
-  {path:'/',component:Home},
-  {path:'/about',component:About},
-  {path:'/shanto',component:Shanto},
-  {path:'/post/:id',component:Post}
+const routes = [{
+    path: '/',
+    component: Home
+  },
+  {
+    path: '/about',
+    component: About
+  },
+  {
+    path: '/shanto',
+    component: Shanto
+  },
+  {
+    path: '/post/:id',
+    component: Post
+  }
 
 ]
 
 const router = new VueRouter({
-  mode:'history',
+  mode: 'history',
   routes
 })
 // vuex
 
 Vue.use(Vuex)
-import {storage} from './store/index'
+import {
+  storage
+} from './store/index'
 const store = new Vuex.Store(storage)
 
 

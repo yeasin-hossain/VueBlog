@@ -33,13 +33,16 @@ export default {
 <style scoped>
 .fevorite{
     margin-top: 15px;
+    z-index: 9999;
+    position: sticky;
+    top: 75px;
 }
 .post{
     display: flex;
     min-height: 45px;
     background: darkcyan;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 4px;
     height: auto;
     margin-top: 5px;
@@ -49,7 +52,7 @@ export default {
 }
 .post p{
     color: #fff;
-    padding: 5px;
+    padding: 8px;
     font-weight: 600;
     font-size: 15px;
     margin: 0;

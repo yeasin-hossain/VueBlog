@@ -132,6 +132,9 @@ export default {
         align-items: center;
         border-radius: 4px;
         margin-top: 15px;
+        z-index: 9999;
+        position: sticky;
+        top: 75px;
     }
 /*     
     .content form{}

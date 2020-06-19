@@ -1,6 +1,6 @@
 <template>
-<div>    
-    <nav class="navi">
+<div class="navi">    
+    <nav >
       <ul>
         <li> <router-link to="/">Home</router-link> </li>
         <li> <router-link to="/shanto">Shanto</router-link> </li>
@@ -21,6 +21,12 @@ export default {
 .navi{
     height: 60px;
     background-color: crimson;
+    top: 0;
+    position: sticky;
+    z-index: 999;
+}
+.navi nav{
+      height: 100%
 }
 .navi ul{
     list-style: none;
